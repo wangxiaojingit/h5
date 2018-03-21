@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折叠3d效果</title>
+    <style>
+    
+    *{margin:0;padding:0;}
+    #main{
+        width:500px;
+        height:500px;
+        background:powderblue;
+        margin:0 auto;
+        padding:10px;
+        box-sizing: border-box;
+    }
+    dl>dt{
+        background:green;
+        height:40px;
+        line-height:40px;
+        font-size:32px;
+        text-align:center;
+    }
+    dd{
+        background:yellowgreen;
+        height:60px;
+        line-height:60px;
+        font-size:24px;
+        padding-left:10px;
+        box-sizing: border-box;
+        border-top:2px dashed #fff;
+        width:100%;
+    }
+    i,p{
+        float:left;
+      
+    }
+    .click{
+        margin-top:100px;
+    }
+    </style>
+</head>
+<body>
+   <div id="main">
+        <dl class="main">
+            <dt>自我介绍</dt>
+            <dd><i>1</i><p>姓名:王小金</p></dd>
+            <dd><i>2</i><p>学历:大专</p></dd>
+            <dd><i>3</i><p>出生年月:1987.8</p></dd>
+            <dd><i>4</i><p>性格:恬静但不沉闷</p></dd>
+            <dd><i>5</i><p>技能:javascript,</p></dd>
+            <dd><i>6</i><p>开发工具:webstorm,vscode等</p></dd>
+            <dd><i>7</i><p>品德:和善,谦让,乐于助人,注重团队合作</p></dd>
+            <dd><i>8</i><p>座右铭:做最好的自己,我能!</p></dd> 
+       </dl>
+   </div>
+   <button class="click">点击</button>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+
+<script type="text/javascript" src="js/makisu.min.js"></script>
+<script>
+  $(function(){
+     
+         
+            $(".main").makisu({
+                selector: 'dd',
+                overlap: 0.85,
+                speed: 1.7
+            });
+
+            $( '.main' ).makisu( 'open' );
+      
+  })
+</script>

@@ -1,0 +1,94 @@
+@import "reset.min.css";
+@import "animate.min.css";
+@import "swiper.min.css";
+html {
+  font-size: 100px;
+  /*640PX：1REM=100PX*/
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: #F4F4F4;
+}
+.mainBox {
+  margin: 0 auto;
+  max-width: 640px;
+  height: 100%;
+  background: #FFF;
+  overflow: hidden;
+}
+.loadingBox,
+.phoneBox,
+.messageBox,
+.cubeBox,
+.detailBox {
+  display: none;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+/*--LOADING--*/
+.loadingBox {
+  background: #000;
+}
+.loadingBox .title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2.2rem;
+  width: 100%;
+  height: 1.4rem;
+  text-align: center;
+  color: #FFF;
+  letter-spacing: .04rem;
+}
+.loadingBox .title h1 {
+  line-height: .75rem;
+  font-size: .5rem;
+}
+.loadingBox .title h2 {
+  margin-top: .2rem;
+  line-height: .45rem;
+  font-size: .26rem;
+}
+.loadingBox .progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2.3rem;
+  margin-top: 0.85rem;
+  width: 4.6rem;
+  height: 0.3rem;
+  background: #FFF;
+  border-radius: 0.15rem;
+}
+.loadingBox .progress .run {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  transition: .3s;
+  background: -webkit-linear-gradient(left bottom, #5cb85c 0%, #5cb85c 25%, #74c274 25%, #74c274 50%, #5cb85c 50%, #5cb85c 75%, #74c274 75%, #74c274 100%);
+  background-size: 0.3rem 0.3rem;
+  animation: loadingMove .5s linear infinite both;
+}
+@keyframes loadingMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -0.3rem;
+  }
+}
+/*
+ * 移动端开发的时候，我们使用的大部分CSS3样式属性，都需要写两套：
+ *  -webkit-xxx:
+ *  xxx:
+ *
+ * 加前缀的一定要在前面,不加前缀的在后面(顺序不能乱),只有这样才能适配基本的IOS和安卓系统
+ *
+ * transition、animation、@keyframes、transform、gradient、flex..
+*/
